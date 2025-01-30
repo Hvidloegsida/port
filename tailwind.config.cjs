@@ -7,4 +7,20 @@ module.exports = {
         require('@tailwindcss/aspect-ratio'),
         require('@tailwindcss/container-queries'),
     ],
+    theme: {
+        extend:{
+            fontFamily: {
+                fugaz: ["Fugaz One"],
+            },
+            colors: {
+                yellow: {
+                    500: "#FFBF31",
+                },
+            pink: {
+                500: "#E8236A",
+                700: "#6A0251"
+            }
+            }
+        }
+    }
   };
