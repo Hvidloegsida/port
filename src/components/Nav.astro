@@ -1,6 +1,6 @@
 <nav class="flex flex-row text-Blue-500 justify-center items-center font-goldman space-x-6 mb-5">
-    <a href="/" >Portfolio</a>
-    <a href="/about">About</a>
+    <a href="/" class="nav-link">Portfolio</a>
+    <a href="/about" class="nav-link">About</a>
 </nav>
 
 <style>
@@ -74,3 +74,17 @@ calc(var(--egde-size) + var(--border-width) * .5),
     );
   }
 </style>
+
+
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".nav-link");
+    const currentPath = window.location.pathname;
+
+    links.forEach(link => {
+      if (link.getAttribute("href") === currentPath) {
+        link.classList.add("box");
+      }
+    });
+  });
+</script>
