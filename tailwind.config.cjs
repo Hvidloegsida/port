@@ -11,6 +11,7 @@ module.exports = {
         extend:{
             fontFamily: {
                 fugaz: ["Fugaz One"],
+                goldman: ["Goldman"]
             },
             colors: {
                 yellow: {
@@ -19,8 +20,11 @@ module.exports = {
             pink: {
                 500: "#E8236A",
                 700: "#6A0251"
+            },
+            Blue: {
+                500: "#AECCE0"
             }
-            }
+            },
         }
     }
   };
