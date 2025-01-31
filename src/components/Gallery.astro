@@ -1,0 +1,87 @@
+<div class="slider-box">
+<div class="container">
+    <div class="main-slider">
+
+     <input checked="checked" id="box1" name="ani" type="radio">
+    <label for="box"><img src="billed1.png" alt="" width="100"></label>
+    <img src="billed1.png" alt="">
+
+    <input  id="box2" name="ani" type="radio">
+    <label for="box"><img src="billed2.png" alt="" width="100"></label>
+    <img src="billed2.png" alt="">
+
+    <input id="box3" name="ani" type="radio">
+    <label for="box"><img src="billed3.jpg" alt="" width="100"></label>
+    <img src="billed3.jpg" alt="">
+
+    <input id="box4" name="ani" type="radio">
+    <label for="box"><img src="billed4.jpg" alt="" width="100"></label>
+    <img src="billed4.jpg" alt="">
+
+    <input  id="box5" name="ani" type="radio">
+    <label for="box"><img src="billed5.png" alt="" width="100"></label>
+    <img src="billed5.png" alt="">
+
+    <input  id="box6" name="ani" type="radio">
+    <label for="box"><img src="billed6.png" alt="" width="100"></label>
+    <img src="billed6.png" alt="">
+
+    <input  id="box7" name="ani" type="radio">
+    <label for="box"><img src="billed7.png" alt="" width="100"></label>
+    <img src="billed7.png" alt="">
+
+    </div>
+</div>
+</div>
+
+<style>
+    .slider-box {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+    }
+
+    .main-slider {
+        position: relative;
+        width: 640px;
+        padding-top: 320px;
+        margin: 20px auto;
+    }
+
+    .main-slider> img{
+        position:absolute;
+        left: 0;
+        top: 0;
+
+    }
+
+    .main-slider input[name='ani']{
+        display: none;
+    }
+
+    .main-slider label {
+        margin: 50px 0 0 20px;
+        border: 3px solid #888;
+        float: left;
+        cursor: pointer;
+        opacity: 0.6;
+    }
+
+    .main-slider label img{
+        display: block;
+    }
+
+    .main-slider input[name='ani']:checked+label{
+        opacity: 1;
+    }
+    .main-slider input[name='ani']~img{
+        opacity: 0;
+        transform: scale(1.1);
+
+    }
+
+    .main-slider input[name='ani']:checked+label+img{
+        opacity: 1;
+        transform: scale(1);
+    }
+</style>
