@@ -1,87 +1,104 @@
+---
+---
+
 <div class="slider-box">
-<div class="container">
-    <div class="main-slider">
-
-     <input checked="checked" id="box1" name="ani" type="radio">
-    <label for="box"><img src="billed1.png" alt="" width="100"></label>
-    <img src="billed1.png" alt="">
-
-    <input  id="box2" name="ani" type="radio">
-    <label for="box"><img src="billed2.png" alt="" width="100"></label>
-    <img src="billed2.png" alt="">
-
-    <input id="box3" name="ani" type="radio">
-    <label for="box"><img src="billed3.jpg" alt="" width="100"></label>
-    <img src="billed3.jpg" alt="">
-
-    <input id="box4" name="ani" type="radio">
-    <label for="box"><img src="billed4.jpg" alt="" width="100"></label>
-    <img src="billed4.jpg" alt="">
-
-    <input  id="box5" name="ani" type="radio">
-    <label for="box"><img src="billed5.png" alt="" width="100"></label>
-    <img src="billed5.png" alt="">
-
-    <input  id="box6" name="ani" type="radio">
-    <label for="box"><img src="billed6.png" alt="" width="100"></label>
-    <img src="billed6.png" alt="">
-
-    <input  id="box7" name="ani" type="radio">
-    <label for="box"><img src="billed7.png" alt="" width="100"></label>
-    <img src="billed7.png" alt="">
-
+    <div class="container">
+      <div class="main-slider">
+  
+        <input checked="checked" id="box1" name="ani" type="radio">
+        <label for="box1"><img src="billed1.png" alt="" width="100"></label>
+        
+        <input id="box2" name="ani" type="radio">
+        <label for="box2"><img src="billed2.png" alt="" width="100"></label>
+  
+        <input id="box3" name="ani" type="radio">
+        <label for="box3"><img src="billed3.jpg" alt="" width="100"></label>
+  
+        <input id="box4" name="ani" type="radio">
+        <label for="box4"><img src="billed4.jpg" alt="" width="100"></label>
+  
+        <input id="box5" name="ani" type="radio">
+        <label for="box5"><img src="billed5.png" alt="" width="100"></label>
+  
+        <input id="box6" name="ani" type="radio">
+        <label for="box6"><img src="billed6.png" alt="" width="100"></label>
+  
+        <input id="box7" name="ani" type="radio">
+        <label for="box7"><img src="billed7.png" alt="" width="100"></label>
+  
+        <div class="slides">
+          <img class="slide" src="billed1.png" alt="">
+          <img class="slide" src="billed2.png" alt="">
+          <img class="slide" src="billed3.jpg" alt="">
+          <img class="slide" src="billed4.jpg" alt="">
+          <img class="slide" src="billed5.png" alt="">
+          <img class="slide" src="billed6.png" alt="">
+          <img class="slide" src="billed7.png" alt="">
+        </div>
+  
+      </div>
     </div>
-</div>
-</div>
-
-<style>
+  </div>
+  
+  <style>
     .slider-box {
         display: grid;
         place-items: center;
         min-height: 100vh;
     }
-
+  
     .main-slider {
         position: relative;
         width: 640px;
-        padding-top: 320px;
         margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
-    .main-slider> img{
-        position:absolute;
-        left: 0;
-        top: 0;
-
-    }
-
-    .main-slider input[name='ani']{
+  
+    .main-slider input[name='ani'] {
         display: none;
     }
-
+  
     .main-slider label {
-        margin: 50px 0 0 20px;
-        border: 3px solid #888;
-        float: left;
+        margin: 10px;
+
         cursor: pointer;
         opacity: 0.6;
+        transition: opacity 0.3s;
     }
-
-    .main-slider label img{
+  
+    .main-slider label img {
         display: block;
     }
-
-    .main-slider input[name='ani']:checked+label{
+  
+    .main-slider input[name='ani']:checked + label {
         opacity: 1;
     }
-    .main-slider input[name='ani']~img{
+  
+    .slides {
+        position: relative;
+        width: 640px;
+        height: 320px;
+    }
+  
+    .slide {
+        position: absolute;
+        width: 100%;
+        height: auto;
         opacity: 0;
-        transform: scale(1.1);
-
+        transition: opacity 0.5s ease-in-out;
     }
-
-    .main-slider input[name='ani']:checked+label+img{
+  
+    /* Show the selected image */
+    #box1:checked ~ .slides img:nth-child(1),
+    #box2:checked ~ .slides img:nth-child(2),
+    #box3:checked ~ .slides img:nth-child(3),
+    #box4:checked ~ .slides img:nth-child(4),
+    #box5:checked ~ .slides img:nth-child(5),
+    #box6:checked ~ .slides img:nth-child(6),
+    #box7:checked ~ .slides img:nth-child(7) {
         opacity: 1;
-        transform: scale(1);
     }
-</style>
+  </style>
+  
