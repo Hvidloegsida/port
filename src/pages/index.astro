@@ -5,6 +5,7 @@ import Box from "../components/Box.astro";
 import Skills from "../components/Skills.astro";
 import Gallery from "../components/Gallery.astro";
 import Skillscode from "../components/Skillscode.astro";
+import Gallery2 from "../components/Gallery2.astro"
 ---
 <MainLayout title="Titel">
 
@@ -34,9 +35,32 @@ import Skillscode from "../components/Skillscode.astro";
 </div>
 <Box overskrift="Graphics", underoverskrift1="AND ILLUSTRATIONS" />
 
-<Gallery />
+<Gallery2 />
 
 
 </MainLayout>
 
-<script src="../styles/test.js"></script>
+<script is:inline>
+    let slideIndexMain = 0;
+    const slidesMain = document.querySelectorAll(".mySlides");
+  
+    function showSlidesMain(index) {
+      slidesMain.forEach((slide, i) => {
+        slide.style.display = i === index ? "block" : "none";
+      });
+    }
+  
+    function changeSlideMain(n) {
+      slideIndexMain += n;
+      if (slideIndexMain >= slidesMain.length) slideIndexMain = 0;
+      if (slideIndexMain < 0) slideIndexMain = slidesMain.length - 1;
+      showSlidesMain(slideIndexMain);
+    }
+  
+    document.getElementById("prevSlide").addEventListener("click", () => changeSlideMain(-1));
+    document.getElementById("nextSlide").addEventListener("click", () => changeSlideMain(1));
+  
+    // Initialize first slide
+    showSlidesMain(slideIndexMain);
+  </script>
+  
