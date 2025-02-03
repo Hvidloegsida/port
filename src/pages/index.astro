@@ -55,20 +55,7 @@ import Box2 from "../components/Box2.astro";
 </div>
 
 <!-- Internship  -->
-<div>
-  <div class="flex flex-col justify-center items-center lg:flex-row lg:justify-start">
-<Box2 overskrift="Graphics", underoverskrift1="AND ILLUSTRATIONS" />
-<button id="toggleButton2" class="text-Blue-500 p-2 rounded-md text-4xl -rotate-90 "> &#10094;</button>
-</div>
-<div id="collapsibleContent2" class="content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out flex flex-col justify-center items-center lg:flex-row">
 
-  <Gallery2 img1={["/billed7.png"]} img2={["/billed6.png"]} img3={["/billed5.png"]}>
-  </Gallery2>
-
-  <Text tekst="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia autem iste doloribus aspernatur debitis non enim ex dignissimos provident rem quod, id sequi natus ad vel hic, voluptatum accusantium quasi!"></Text>
-</div>
-
-</div>
 
 </MainLayout>
 
@@ -122,7 +109,6 @@ import Box2 from "../components/Box2.astro";
     }
 
     setupCollapsible("toggleButton", "collapsibleContent");
-    setupCollapsible("toggleButton2", "collapsibleContent2");
 });
 
 </script>
