@@ -4,7 +4,6 @@ import Text from "./Text.astro"
 import Gallery2 from "./Gallery2.astro"
 ---
 
-<Box overskrift="Graphics", underoverskrift1="AND ILLUSTRATIONS" />
 <section class="accordion">
   <input type="checkbox" name="collapse" id="handle1" checked="checked">
   <h2 class="handle">
@@ -68,11 +67,7 @@ import Gallery2 from "./Gallery2.astro"
 /*
  Styling
 */
-body {
-  font: 16px/1.5em "Overpass", "Open Sans", Helvetica, sans-serif;
-  color: #333;
-  font-weight: 300;
-}
+
 
 .accordion {
   margin-bottom: 1em;
@@ -80,15 +75,9 @@ body {
 
 .accordion > input[type="checkbox"]:checked ~ .content {
   padding: 15px;
-  border: 1px solid #e8e8e8;
-  border-top: 0;
 }
 
-.accordion .handle {
-  margin: 0;
-  font-size: 1.125em;
-  line-height: 1.2em;
-}
+
 
 .accordion label {
   color: #333;
@@ -98,13 +87,10 @@ body {
   background: #e8e8e8;
 }
 
-.accordion label:hover,
-.accordion label:focus {
-  background: #d8d8d8;
-}
+
 
 .accordion .handle label:before {
-  font-family: 'fontawesome';
+
   content: "\f054";
   display: inline-block;
   margin-right: 10px;
