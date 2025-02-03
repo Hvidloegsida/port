@@ -4,7 +4,7 @@ const {overskrift, underoverskrift1, underoverskrift2} = Astro.props;
 ---
 
 
-<section class="box font-fugaz flex-1 lg:self-start lg:max-w-[885px] lg:min-w-[630px]">
+<section class="box font-fugaz lg:self-start  ">    
     <h1 class="text-yellow-500 text-[2.5rem] -ml-4 sm:text-[3.5rem] sm:-mt-2 md:text-[4rem] md:-ml-5 lg:text-[5rem] lg:-ml-6 lg:-mt-4">{overskrift}</h1>
     <img src="tech1.png" alt="" class="-ml-4 w-[80%] max-w-[17em] h-auto -mt-[0.8rem]">
   
@@ -47,7 +47,17 @@ clip-path: polygon(
                 /* buttom-left */
     0 100%
     );
+    /* max-width: clamp(630px, 67vw, 885px); */
+
+   
+
   }
+
+  @media (min-width: 1024px) { /* lg breakpoint */
+  .box {
+    width: clamp(633px, calc(633px + (850 - 633) * ((100vw - 1024px) / (1280 - 1024))), 850px);
+  }
+}
 
   .box::before,
   .box::after {
@@ -88,4 +98,7 @@ calc(var(--egde-size) + var(--border-width) * .5),
     calc(100% - var(--border-width) ) 
     );
   }
+
+
+
 </style>

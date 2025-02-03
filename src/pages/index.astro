@@ -7,6 +7,7 @@ import Skillscode from "../components/Skillscode.astro";
 import Gallery2 from "../components/Gallery2.astro"
 import Text from "../components/Text.astro"
 import Section from "../components/Section.astro";
+import Box2 from "../components/Box2.astro";
 ---
 <MainLayout title="Titel">
 
@@ -40,8 +41,8 @@ import Section from "../components/Section.astro";
 
 
 <div>
-  <div class="flex flex-col lg:flex-row">
-<Box overskrift="Graphics", underoverskrift1="AND ILLUSTRATIONS" />
+  <div class="flex flex-col justify-center items-center lg:flex-row lg:justify-start">
+<Box2 overskrift="Graphics", underoverskrift1="AND ILLUSTRATIONS" />
 <button id="toggleButton" class="text-Blue-500 p-2 rounded-md text-4xl -rotate-90 "> &#10094;</button>
 </div>
 <div id="collapsibleContent" class="content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out flex flex-col justify-center items-center lg:flex-row">
