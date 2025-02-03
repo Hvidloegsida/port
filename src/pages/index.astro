@@ -42,9 +42,9 @@ import Box2 from "../components/Box2.astro";
 <div>
   <div class="flex flex-col justify-center items-center lg:flex-row lg:justify-start">
 <Box2 overskrift="Graphics", underoverskrift1="AND ILLUSTRATIONS" />
-<button id="toggleButton" class="text-Blue-500 p-2 rounded-md text-4xl -rotate-90 "> &#10094;</button>
+<button id="toggleButton1" class="text-Blue-500 p-2 rounded-md text-4xl -rotate-90 "> &#10094;</button>
 </div>
-<div id="collapsibleContent" class="content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out flex flex-col justify-center items-center lg:flex-row">
+<div id="collapsibleContent1" class="content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out flex flex-col justify-center items-center lg:flex-row">
 
   <Gallery2 img1="/billed1.png" img2="/billed2.png" img3="/billed3.jpg" id="gallery1" />
 
@@ -56,7 +56,21 @@ import Box2 from "../components/Box2.astro";
 
 <!-- Internship  -->
 
-<Gallery3 img1="/billed6.png" img2="/billed7.png" img3="/billed5.png" id="gallery1"></Gallery3>
+<div>
+  <div class="flex flex-col justify-center items-center lg:flex-row lg:justify-start">
+<Box2 overskrift="Graphics", underoverskrift1="AND ILLUSTRATIONS" />
+<button id="toggleButton2" class="text-Blue-500 p-2 rounded-md text-4xl -rotate-90 "> &#10094;</button>
+</div>
+<div id="collapsibleContent2" class="content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out flex flex-col justify-center items-center lg:flex-row">
+
+  <Gallery3 img1="/billed6.png" img2="/billed7.png" img3="/billed5.png" id="gallery1"></Gallery3>
+
+
+  <Text tekst="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia autem iste doloribus aspernatur debitis non enim ex dignissimos provident rem quod, id sequi natus ad vel hic, voluptatum accusantium quasi!"></Text>
+</div>
+
+</div>
+
 
 </MainLayout>
 
@@ -109,7 +123,8 @@ import Box2 from "../components/Box2.astro";
         }
     }
 
-    setupCollapsible("toggleButton", "collapsibleContent");
+    setupCollapsible("toggleButton1", "collapsibleContent1");
+    setupCollapsible("toggleButton2", "collapsibleContent2");
 });
 
 </script>
