@@ -1,4 +1,5 @@
 ---
+const {img1, img2, img3} = Astro.props;
 
 ---
 
@@ -8,17 +9,17 @@
       <!-- Full-width images -->
       <div class="mySlidesGallery2 fade">
         <div class="numbertext">1 / 3</div>
-        <img src="/billed4.jpg">
+        <img src={img1}>
       </div>
     
       <div class="mySlidesGallery2 fade">
         <div class="numbertext">2 / 3</div>
-        <img src="/billed1.png">
+        <img src={img2}>
       </div>
     
       <div class="mySlidesGallery2 fade">
         <div class="numbertext">3 / 3</div>
-        <img src="/billed2.png">
+        <img src={img3}>
       </div>
     
       <!-- Next and previous buttons -->
