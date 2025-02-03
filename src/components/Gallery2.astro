@@ -2,50 +2,101 @@
 
 ---
 
-<!-- Slideshow container -->
-<div class="slideshow-container gallery2 w-[50%] max-w-[300px] lg:max-w-[500px]">
-
-    <!-- Full-width images with number and caption text -->
-    <div class="mySlidesGallery2 fade">
-      <div class="numbertext">1 / 3</div>
-      <img src="/billed4.jpg" style="width:100%">
-    </div>
-  
-    <div class="mySlidesGallery2 fade">
-      <div class="numbertext">2 / 3</div>
-      <img src="/billed1.png" style="width:100%">
-    </div>
-  
-    <div class="mySlidesGallery2 fade">
-      <div class="numbertext">3 / 3</div>
-      <img src="/billed2.png" style="width:100%">
-    </div>
-  
-    <!-- Next and previous buttons -->
-    <a class="sidste" onclick="plusSlidesGallery2(-1)">&#10094;</a>
-    <a class="neste" onclick="plusSlidesGallery2(1)">&#10095;</a>
+<div class="slideshow-wrapper">
+  <!-- Slideshow container -->
+  <div class="slideshow-container gallery2">
+      <!-- Full-width images -->
+      <div class="mySlidesGallery2 fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="/billed4.jpg">
+      </div>
+    
+      <div class="mySlidesGallery2 fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="/billed1.png">
+      </div>
+    
+      <div class="mySlidesGallery2 fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="/billed2.png">
+      </div>
+    
+      <!-- Next and previous buttons -->
+      <a class="sidste" onclick="plusSlidesGallery2(-1)">&#10094;</a>
+      <a class="neste" onclick="plusSlidesGallery2(1)">&#10095;</a>
   </div>
-  <br>
-  
+
   <!-- The dots/circles -->
-  <div style="text-align:center">
+  <div class="dots-container">
     <span class="dotGallery2" onclick="currentSlideGallery2(1)"></span>
     <span class="dotGallery2" onclick="currentSlideGallery2(2)"></span>
     <span class="dotGallery2" onclick="currentSlideGallery2(3)"></span>
   </div>
+</div>
 
   <style>
     * {box-sizing:border-box}
 
+    .slideshow-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 /* Slideshow container */
 .slideshow-container {
   position: relative;
+  width: 50%;
+  max-width: 300px;
+  aspect-ratio: 16 / 9; /* Ensures a consistent height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: auto;
+}
+
+@media (min-width: 1024px) {
+  .slideshow-container {
+    max-width: 500px;
+  }
+}
+
+.mySlidesGallery2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures images fit inside the container */
 }
 
 /* Hide the images by default */
 .mySlidesGallery2 {
-  display: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* The dots */
+.dotGallery2 {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dotGallery2:hover {
+  background-color: #717171;
 }
 
 /* Next & previous buttons */
