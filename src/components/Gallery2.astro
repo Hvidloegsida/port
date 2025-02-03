@@ -48,11 +48,9 @@
   position: relative;
   width: 50%;
   max-width: 300px;
-  aspect-ratio: 16 / 9; /* Ensures a consistent height */
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block; /* Ensures correct positioning */
   margin: auto;
 }
 
@@ -80,6 +78,7 @@
 .dots-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 10px;
 }
 
@@ -104,8 +103,8 @@
   cursor: pointer;
   position: absolute;
   top: 50%;
+  transform: translateY(-50%); /* Centers vertically */
   width: auto;
-  margin-top: -22px;
   padding: 16px;
   color: white;
   font-weight: bold;
@@ -119,6 +118,10 @@
 .neste {
   right: 0;
   border-radius: 3px 0 0 3px;
+}
+
+.sidste {
+  left: 0;
 }
 
 /* On hover, add a black background color with a little bit see-through */
