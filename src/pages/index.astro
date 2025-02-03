@@ -1,6 +1,5 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from '../components/Button.astro';
 import Box from "../components/Box.astro";
 import Skills from "../components/Skills.astro";
 import Skillscode from "../components/Skillscode.astro";
@@ -39,7 +38,7 @@ import Box2 from "../components/Box2.astro";
 
 
 
-
+<!-- Graphic  -->
 <div>
   <div class="flex flex-col justify-center items-center lg:flex-row lg:justify-start">
 <Box2 overskrift="Graphics", underoverskrift1="AND ILLUSTRATIONS" />
@@ -55,57 +54,75 @@ import Box2 from "../components/Box2.astro";
 
 </div>
 
+<!-- Internship  -->
+<div>
+  <div class="flex flex-col justify-center items-center lg:flex-row lg:justify-start">
+<Box2 overskrift="Graphics", underoverskrift1="AND ILLUSTRATIONS" />
+<button id="toggleButton2" class="text-Blue-500 p-2 rounded-md text-4xl -rotate-90 "> &#10094;</button>
+</div>
+<div id="collapsibleContent2" class="content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out flex flex-col justify-center items-center lg:flex-row">
 
+  <Gallery2 img1={["/billed7.png"]} img2={["/billed6.png"]} img3={["/billed5.png"]}>
+  </Gallery2>
 
+  <Text tekst="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia autem iste doloribus aspernatur debitis non enim ex dignissimos provident rem quod, id sequi natus ad vel hic, voluptatum accusantium quasi!"></Text>
+</div>
+
+</div>
 
 </MainLayout>
 
-<script is:inline>
-  let slideIndexMain = 0;
-  const slidesMain = document.querySelectorAll(".mySlides");
-
-  function showSlidesMain(index) {
-    slidesMain.forEach((slide, i) => {
-      slide.style.display = i === index ? "block" : "none";
-    });
-  }
-
-  function changeSlideMain(n) {
-    slideIndexMain += n;
-    if (slideIndexMain >= slidesMain.length) slideIndexMain = 0;
-    if (slideIndexMain < 0) slideIndexMain = slidesMain.length - 1;
-    showSlidesMain(slideIndexMain);
-  }
-
-  document.getElementById("prevSlide").addEventListener("click", () => changeSlideMain(-1));
-  document.getElementById("nextSlide").addEventListener("click", () => changeSlideMain(1));
-
+<script>
   document.addEventListener("DOMContentLoaded", function () {
-      const toggleButton = document.getElementById("toggleButton");
-      const collapsibleContent = document.getElementById("collapsibleContent");
+    // SLIDESHOW FUNCTIONALITY
+    let slideIndexMain = 0;
+    const slidesMain = document.querySelectorAll(".mySlides");
 
-      toggleButton.addEventListener("click", function () {
-          // Toggle collapse state
-          if (collapsibleContent.classList.contains("max-h-0")) {
-              collapsibleContent.classList.remove("max-h-0", "opacity-0");
-              collapsibleContent.classList.add("max-h-screen", "opacity-100");
-              toggleButton.classList.replace("-rotate-90", "rotate-90");
+    function showSlidesMain(index) {
+        slidesMain.forEach((slide, i) => {
+            slide.style.display = i === index ? "block" : "none";
+        });
+    }
 
+    function changeSlideMain(n) {
+        slideIndexMain += n;
+        if (slideIndexMain >= slidesMain.length) slideIndexMain = 0;
+        if (slideIndexMain < 0) slideIndexMain = slidesMain.length - 1;
+        showSlidesMain(slideIndexMain);
+    }
 
-              // Scroll to the content after unfolding
-              collapsibleContent.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start'  // Scroll the content into view, aligned at the top of the viewport
-              });
-          } else {
-              collapsibleContent.classList.add("max-h-0", "opacity-0");
-              collapsibleContent.classList.remove("max-h-screen", "opacity-100");
-              toggleButton.classList.replace("rotate-90", "-rotate-90");
+    const prevSlide = document.getElementById("prevSlide");
+    const nextSlide = document.getElementById("nextSlide");
 
-          }
-      });
-  });
+    if (prevSlide && nextSlide) {
+        prevSlide.addEventListener("click", () => changeSlideMain(-1));
+        nextSlide.addEventListener("click", () => changeSlideMain(1));
+    }
+
+    // COLLAPSIBLE SECTIONS
+    function setupCollapsible(buttonId, contentId) {
+        const button = document.getElementById(buttonId);
+        const content = document.getElementById(contentId);
+
+        if (button && content) {
+            button.addEventListener("click", function () {
+                if (content.classList.contains("max-h-0")) {
+                    content.classList.remove("max-h-0", "opacity-0");
+                    content.classList.add("max-h-screen", "opacity-100");
+                    button.classList.replace("-rotate-90", "rotate-90");
+
+                    content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                    content.classList.add("max-h-0", "opacity-0");
+                    content.classList.remove("max-h-screen", "opacity-100");
+                    button.classList.replace("rotate-90", "-rotate-90");
+                }
+            });
+        }
+    }
+
+    setupCollapsible("toggleButton", "collapsibleContent");
+    setupCollapsible("toggleButton2", "collapsibleContent2");
+});
+
 </script>
-
-
-  
