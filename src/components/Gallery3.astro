@@ -1,0 +1,194 @@
+---
+const {img1, img2, img3} = Astro.props;
+
+---
+<div class="slideshow-wrapper3">
+  <!-- Slideshow container -->
+  <div class="slideshow-container3 gallery3">
+      <!-- Full-width images -->
+      <div class="mySlidesGallery3 fade3">
+        <div class="numbertext3">1 / 3</div>
+        <img src={img1}>
+      </div>
+    
+      <div class="mySlidesGallery3 fade3">
+        <div class="numbertext3">2 / 3</div>
+        <img src={img2}>
+      </div>
+    
+      <div class="mySlidesGallery3 fade3">
+        <div class="numbertext3">3 / 3</div>
+        <img src={img3}>
+      </div>
+    
+      <!-- Next and previous buttons -->
+      <a class="sidste3" onclick="plusSlidesGallery3(-1)">&#10094;</a>
+      <a class="neste3" onclick="plusSlidesGallery3(1)">&#10095;</a>
+  </div>
+
+  <!-- The dots/circles -->
+  <div class="dots-container3">
+    <span class="dotGallery3" onclick="currentSlideGallery3(1)"></span>
+    <span class="dotGallery3" onclick="currentSlideGallery3(2)"></span>
+    <span class="dotGallery3" onclick="currentSlideGallery3(3)"></span>
+  </div>
+</div>
+
+  <style>
+    * {box-sizing:border-box}
+
+    .slideshow-wrapper3 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+/* Slideshow container */
+.slideshow-container3 {
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  display: block; /* Ensures correct positioning */
+  margin: auto;
+}
+
+
+.mySlidesGallery3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures images fit inside the container */
+}
+
+/* Hide the images by default */
+.mySlidesGallery3 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dots-container3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* The dots */
+.dotGallery3 {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dotGallery3:hover {
+  background-color: #717171;
+}
+
+/* Next & previous buttons */
+.sidste3, .neste3 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Centers vertically */
+  width: auto;
+  padding: 16px;
+  color: #AECCE0;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.neste3 {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.sidste3 {
+  left: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.sidste3:hover, .neste3:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+/* Number text (1/3 etc) */
+.numbertext3 {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dotGallery3 {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #6A0251;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dotGallery3:hover {
+  background-color: #E8236A;
+}
+
+/* Fading animation */
+.fade3 {
+  animation-name: fade3;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade3 {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+  </style>
+
+
+
+<script is:inline>
+    let slideIndexGallery3 = 1;
+    showSlidesGallery3(slideIndexGallery3);
+  
+    function plusSlidesGallery3(n) {
+        showSlidesGallery3(slideIndexGallery3 += n);
+    }
+  
+    function currentSlideGallery3(n) {
+        showSlidesGallery3(slideIndexGallery3 = n);
+    }
+  
+    function showSlidesGallery3(n) {
+      let i;
+      let slides3 = document.getElementsByClassName("mySlidesGallery3");
+      let dots3 = document.getElementsByClassName("dotGallery3");
+      if (n > slides3.length) {slideIndexGallery3 = 1}
+      if (n < 1) {slideIndexGallery3 = slides3.length}
+      for (i = 0; i < slides3.length; i++) {
+        slides3[i].style.display = "none";
+      }
+      for (i = 0; i < dots3.length; i++) {
+        dots3[i].className = dots3[i].className.replace(" active", "");
+      }
+      slides3[slideIndexGallery3-1].style.display = "block";
+      dots3[slideIndexGallery3-1].className += " active";
+    }
+  </script>

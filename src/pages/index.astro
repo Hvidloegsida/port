@@ -3,7 +3,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Box from "../components/Box.astro";
 import Skills from "../components/Skills.astro";
 import Skillscode from "../components/Skillscode.astro";
-import Gallery2 from "../components/Gallery2.astro"
+import Gallery2 from "../components/Gallery2.astro";
+import Gallery3 from "../components/Gallery3.astro";
 import Text from "../components/Text.astro"
 import Box2 from "../components/Box2.astro";
 ---
@@ -45,8 +46,8 @@ import Box2 from "../components/Box2.astro";
 </div>
 <div id="collapsibleContent" class="content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out flex flex-col justify-center items-center lg:flex-row">
 
-  <Gallery2 img1={["/billed1.png"]} img2={["/billed2.png"]} img3={["/billed3.jpg"]}>
-  </Gallery2>
+  <Gallery2 img1="/billed1.png" img2="/billed2.png" img3="/billed3.jpg" id="gallery1" />
+
 
   <Text tekst="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia autem iste doloribus aspernatur debitis non enim ex dignissimos provident rem quod, id sequi natus ad vel hic, voluptatum accusantium quasi!"></Text>
 </div>
@@ -54,6 +55,8 @@ import Box2 from "../components/Box2.astro";
 </div>
 
 <!-- Internship  -->
+
+<Gallery3 img1="/billed6.png" img2="/billed7.png" img3="/billed5.png" id="gallery1"></Gallery3>
 
 </MainLayout>
 
