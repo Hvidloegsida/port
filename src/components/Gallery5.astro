@@ -1,0 +1,194 @@
+---
+const {img1, img2, img3} = Astro.props;
+
+---
+<div class="slideshow-wrapper5">
+  <!-- Slideshow container -->
+  <div class="slideshow-container5 gallery5">
+      <!-- Full-width images -->
+      <div class="mySlidesGallery5 fade5">
+        <div class="numbertext5">1 / 3</div>
+        <img src={img1}>
+      </div>
+    
+      <div class="mySlidesGallery5 fade5">
+        <div class="numbertext5">2 / 3</div>
+        <img src={img2}>
+      </div>
+    
+      <div class="mySlidesGallery5 fade5">
+        <div class="numbertext5">3 / 3</div>
+        <img src={img3}>
+      </div>
+    
+      <!-- Next and previous buttons -->
+      <a class="sidste5" onclick="plusSlidesGallery5(-1)">&#10094;</a>
+      <a class="neste5" onclick="plusSlidesGallery5(1)">&#10095;</a>
+  </div>
+
+  <!-- The dots/circles -->
+  <div class="dots-container5">
+    <span class="dotGallery5" onclick="currentSlideGallery5(1)"></span>
+    <span class="dotGallery5" onclick="currentSlideGallery5(2)"></span>
+    <span class="dotGallery5" onclick="currentSlideGallery5(3)"></span>
+  </div>
+</div>
+
+  <style>
+    * {box-sizing:border-box}
+
+    .slideshow-wrapper5 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+/* Slideshow container */
+.slideshow-container5 {
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  display: block; /* Ensures correct positioning */
+  margin: auto;
+}
+
+
+.mySlidesGallery5 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures images fit inside the container */
+}
+
+/* Hide the images by default */
+.mySlidesGallery5 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dots-container5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* The dots */
+.dotGallery5 {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dotGallery5:hover {
+  background-color: #717171;
+}
+
+/* Next & previous buttons */
+.sidste5, .neste5 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Centers vertically */
+  width: auto;
+  padding: 16px;
+  color: #AECCE0;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.neste5 {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.sidste5 {
+  left: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.sidste5:hover, .neste5:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+/* Number text (1/3 etc) */
+.numbertext5 {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dotGallery5 {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #6A0251;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dotGallery5:hover {
+  background-color: #E8236A;
+}
+
+/* Fading animation */
+.fade5 {
+  animation-name: fade3;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade3 {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+  </style>
+
+
+
+<script is:inline>
+    let slideIndexGallery5 = 1;
+    showSlidesGallery5(slideIndexGallery5);
+  
+    function plusSlidesGallery5(n) {
+        showSlidesGallery5(slideIndexGallery5 += n);
+    }
+  
+    function currentSlideGallery5(n) {
+        showSlidesGallery5(slideIndexGallery5 = n);
+    }
+  
+    function showSlidesGallery5(n) {
+      let i;
+      let slides5 = document.getElementsByClassName("mySlidesGallery5");
+      let dots5 = document.getElementsByClassName("dotGallery5");
+      if (n > slides5.length) {slideIndexGallery5 = 1}
+      if (n < 1) {slideIndexGallery5 = slides5.length}
+      for (i = 0; i < slides5.length; i++) {
+        slides5[i].style.display = "none";
+      }
+      for (i = 0; i < dots5.length; i++) {
+        dots5[i].className = dots5[i].className.replace(" active", "");
+      }
+      slides5[slideIndexGallery5-1].style.display = "block";
+      dots5[slideIndexGallery5-1].className += " active";
+    }
+  </script>

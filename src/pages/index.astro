@@ -7,6 +7,8 @@ import Gallery2 from "../components/Gallery2.astro";
 import Gallery3 from "../components/Gallery3.astro";
 import Text from "../components/Text.astro"
 import Box2 from "../components/Box2.astro";
+import Gallery4 from "../components/Gallery4.astro";
+import Gallery5 from "../components/Gallery5.astro";
 ---
 <MainLayout title="Titel">
 
@@ -58,7 +60,7 @@ import Box2 from "../components/Box2.astro";
 
 <div>
   <div class="flex flex-col justify-center items-center lg:flex-row lg:justify-start">
-<Box2 overskrift="Graphics", underoverskrift1="AND ILLUSTRATIONS" />
+<Box2 overskrift="Internship", underoverskrift1="TACTILE GRAPHICS" />
 <button id="toggleButton2" class="text-Blue-500 p-2 rounded-md text-4xl -rotate-90 "> &#10094;</button>
 </div>
 <div id="collapsibleContent2" class="content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out flex flex-col justify-center items-center lg:flex-row">
@@ -72,6 +74,38 @@ import Box2 from "../components/Box2.astro";
 </div>
 
 
+
+<div>
+  <div class="flex flex-col justify-center items-center lg:flex-row lg:justify-start">
+<Box2 overskrift="Brand identity", underoverskrift1="AND PRODUCTS - NIJI" />
+<button id="toggleButton4" class="text-Blue-500 p-2 rounded-md text-4xl -rotate-90 "> &#10094;</button>
+</div>
+<div id="collapsibleContent4" class="content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out flex flex-col justify-center items-center lg:flex-row">
+
+  <Gallery4 img1="/billed6.png" img2="/billed7.png" img3="/billed5.png" id="gallery1"></Gallery4>
+
+
+  <Text tekst="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia autem iste doloribus aspernatur debitis non enim ex dignissimos provident rem quod, id sequi natus ad vel hic, voluptatum accusantium quasi!"></Text>
+</div>
+
+</div>
+
+
+
+<div>
+  <div class="flex flex-col justify-center items-center lg:flex-row lg:justify-start">
+<Box2 overskrift="Webdesign", underoverskrift1="CODE, UI, UX AND ANIMATION" />
+<button id="toggleButton5" class="text-Blue-500 p-2 rounded-md text-4xl -rotate-90 "> &#10094;</button>
+</div>
+<div id="collapsibleContent5" class="content overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out flex flex-col justify-center items-center lg:flex-row">
+
+  <Gallery5 img1="/billed6.png" img2="/billed7.png" img3="/billed5.png" ></Gallery5>
+
+
+  <Text tekst="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia autem iste doloribus aspernatur debitis non enim ex dignissimos provident rem quod, id sequi natus ad vel hic, voluptatum accusantium quasi!"></Text>
+</div>
+
+</div>
 </MainLayout>
 
 <script>
@@ -125,6 +159,9 @@ import Box2 from "../components/Box2.astro";
 
     setupCollapsible("toggleButton1", "collapsibleContent1");
     setupCollapsible("toggleButton2", "collapsibleContent2");
+    setupCollapsible("toggleButton4", "collapsibleContent4");
+    setupCollapsible("toggleButton5", "collapsibleContent5");
+
 });
 
 </script>
