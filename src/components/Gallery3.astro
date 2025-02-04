@@ -1,5 +1,5 @@
 ---
-const {img1, img2, img3} = Astro.props;
+const {img1, img2, img3, img4, img5, img6, img7} = Astro.props;
 
 ---
 <div class="slideshow-wrapper3">
@@ -7,19 +7,40 @@ const {img1, img2, img3} = Astro.props;
   <div class="slideshow-container3 gallery3">
       <!-- Full-width images -->
       <div class="mySlidesGallery3 fade3">
-        <div class="numbertext3">1 / 3</div>
+        <div class="numbertext3">1 / 7</div>
         <img src={img1}>
       </div>
     
       <div class="mySlidesGallery3 fade3">
-        <div class="numbertext3">2 / 3</div>
+        <div class="numbertext3">2 / 7</div>
         <img src={img2}>
       </div>
     
       <div class="mySlidesGallery3 fade3">
-        <div class="numbertext3">3 / 3</div>
+        <div class="numbertext3">3 / 7</div>
         <img src={img3}>
       </div>
+
+      <div class="mySlidesGallery3 fade3">
+        <div class="numbertext3">4 / 7</div>
+        <img src={img4}>
+      </div>
+    
+      <div class="mySlidesGallery3 fade3">
+        <div class="numbertext3">5 / 7</div>
+        <img src={img5}>
+      </div>
+    
+      <div class="mySlidesGallery3 fade3">
+        <div class="numbertext3">6 / 7</div>
+        <img src={img6}>
+      </div>
+    
+      <div class="mySlidesGallery3 fade3">
+        <div class="numbertext3">7 / 7</div>
+        <img src={img7}>
+      </div>
+    
     
       <!-- Next and previous buttons -->
       <a class="sidste3" onclick="plusSlidesGallery3(-1)">&#10094;</a>
@@ -31,6 +52,11 @@ const {img1, img2, img3} = Astro.props;
     <span class="dotGallery3" onclick="currentSlideGallery3(1)"></span>
     <span class="dotGallery3" onclick="currentSlideGallery3(2)"></span>
     <span class="dotGallery3" onclick="currentSlideGallery3(3)"></span>
+    <span class="dotGallery3" onclick="currentSlideGallery3(4)"></span>
+    <span class="dotGallery3" onclick="currentSlideGallery3(5)"></span>
+    <span class="dotGallery3" onclick="currentSlideGallery3(6)"></span>
+    <span class="dotGallery3" onclick="currentSlideGallery3(7)"></span>
+
   </div>
 </div>
 
