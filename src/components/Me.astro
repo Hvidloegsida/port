@@ -1,0 +1,113 @@
+<section class="flex flex-col items-center justify-center lg:flex-row gap-6 ">
+<div class="box h-44 w-44">
+    <img src="/me.jpg" alt="" class="">
+
+</div>
+<div class="box text-Blue-500 font-goldman">
+<p class="px-10">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel pariatur est quasi voluptas rem accusantium mollitia tempora, molestias qui magni, eaque hic at suscipit adipisci tenetur ad, possimus quam iste.</p>
+</div>
+
+</section>
+
+
+<style>
+  .box {
+    --background-color: black;
+    --border-colour: #FFBF31;
+--border-width: .1em;
+--egde-size: 2.5em;
+
+position: relative;
+isolation: isolate;
+
+display: flex;
+overflow: hidden;
+padding: 0.5em 1.5em;
+border: 0;
+background: var(--background-color);
+clip-path: polygon( 
+    /* top-left 1 */
+0% var(--egde-size),
+    /* top-left 2 */
+    var(--egde-size) 0%, 
+        /* top-right  */
+    100% 0, 
+            /* buttom-right 1 */
+    100% calc(100% - var(--egde-size)), 
+                /* buttom-right 2 */
+    calc(100% - var(--egde-size)) 100%, 
+                /* buttom-left */
+    0 100%
+    );
+  }
+
+  .box::before,
+  .box::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+
+  .box::before {
+    background: var(--border-colour);
+    z-index: -2;
+  }
+
+
+  .box::after {
+    background: var(--background-color);
+    z-index: -1;
+
+    clip-path: polygon( 
+    /* top-left 1 */
+var(--border-width) 
+calc(var(--egde-size) + var(--border-width) * .5),
+    /* top-left 2 */
+    calc(var(--egde-size) + var(--border-width) * .5)
+    var(--border-width), 
+        /* top-right  */
+    calc(100% - var(--border-width)) 
+    var(--border-width), 
+            /* buttom-right 1 */
+    calc(100% - var(--border-width) )  
+    calc(100% - calc(var(--egde-size) + var(--border-width) * .5)), 
+                /* buttom-right 2 */
+    calc(100% - calc(var(--egde-size) + var(--border-width) * .5))
+    calc(100% - var(--border-width) ) , 
+                /* buttom-left */
+    var(--border-width)  
+    calc(100% - var(--border-width) ) 
+    );
+  }
+
+
+  .box img {
+  position: absolute; /* Make image fill the box */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure it covers fully */
+  clip-path: polygon( 
+    /* top-left 1 */
+var(--border-width) 
+calc(var(--egde-size) + var(--border-width) * .5),
+    /* top-left 2 */
+    calc(var(--egde-size) + var(--border-width) * .5)
+    var(--border-width), 
+        /* top-right  */
+    calc(100% - var(--border-width)) 
+    var(--border-width), 
+            /* buttom-right 1 */
+    calc(100% - var(--border-width) )  
+    calc(100% - calc(var(--egde-size) + var(--border-width) * .5)), 
+                /* buttom-right 2 */
+    calc(100% - calc(var(--egde-size) + var(--border-width) * .5))
+    calc(100% - var(--border-width) ) , 
+                /* buttom-left */
+    var(--border-width)  
+    calc(100% - var(--border-width) ) 
+    );
+}
+</style>
