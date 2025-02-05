@@ -14,17 +14,62 @@ const {overskrift, underoverskrift1, underoverskrift2} = Astro.props;
     <h3 class="place-self-end text-[clamp(0.8rem, 3vw, 1.5rem)] -mt-2">{underoverskrift2}</h3>
 </div>
 </section>
-
-<section class="text-Blue-500">
-  <p>Illustrator</p>
-  <p>Graphic designer</p>
-  <p>UI UX designer</p>
-  <p>Frontend designer</p>
-</section>
+<div class="banner h-[60px] mt-10 ">
+  <div class="track">
+    <div class="content w-full font-goldman text-Blue-500 text-[20px] font-mont md:text-[25px] xl:text-[25px]">Illustrator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graphic designer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI UX designer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frontend designer&nbsp;&nbsp;&nbsp;&nbsp;Illustrator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graphic designer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI UX designer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frontend designer&nbsp;&nbsp;&nbsp;&nbsp;</div>
+  </div>
 </div>
+</div>
+
+
 
 <style>
 
+.banner {
+  position: relative;
+      overflow: hidden;
+        background-size:  auto;
+  
+        display: flex;
+        align-items: center;
+      }
+  
+      .track {
+        position: absolute;
+        white-space: nowrap;
+        will-change: transform;
+        animation: banner 10s linear infinite;
+      }
+  
+      @keyframes banner {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .banner::before,
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 10%; /* Adjust width for the blur effect */
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.banner::before {
+  left: 0;
+  background: linear-gradient(to right, black, transparent);
+}
+
+.banner::after {
+  right: 0;
+  background: linear-gradient(to left, black, transparent);
+}
   .box {
     --background-color: black;
     --border-colour: #FFBF31;
