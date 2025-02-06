@@ -83,12 +83,14 @@ calc(var(--egde-size) + var(--border-width) * .5),
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll(".nav-link");
-    const currentPath = window.location.pathname;
-    
+    const currentPath = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
+
     links.forEach(link => {
-      if (link.getAttribute("href") === currentPath) {
+      const linkHref = link.getAttribute("href").replace(/\/$/, ''); // Remove trailing slash from link href
+      if (linkHref === currentPath) {
         link.classList.add("box");
       }
     });
   });
 </script>
+
