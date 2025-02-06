@@ -3,8 +3,8 @@ const {tekst} = Astro.props;
 
 ---
 
-<aside class="box text-Blue-500 font-goldman max-w-[284px] h-[477px]  mt-7 flex items-center justify-center">
-<p class="">{tekst}</p>
+<aside class="box text-Blue-500 font-goldman w-full lg:w-[284px] mt-7 flex flex-col justify-start">
+  <p class="">{tekst}</p>
 </aside>
 
 
@@ -17,10 +17,9 @@ const {tekst} = Astro.props;
 
 position: relative;
 isolation: isolate;
-
 display: inline-grid;
 overflow: hidden;
-padding: 0.5em 1.5em;
+padding: 4.5em 1.5em;
 border: 0;
 background: var(--background-color);
 clip-path: polygon( 
