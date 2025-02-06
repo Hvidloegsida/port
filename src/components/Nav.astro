@@ -80,11 +80,11 @@ calc(var(--egde-size) + var(--border-width) * .5),
 </style>
 
 
-<script>
-      document.addEventListener("DOMContentLoaded", function () {
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll(".nav-link");
     const currentPath = window.location.pathname;
-
+    
     links.forEach(link => {
       if (link.getAttribute("href") === currentPath) {
         link.classList.add("box");
