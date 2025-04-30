@@ -1,5 +1,5 @@
 ---
-const {img1, img2, img3, img4, img5, img6, img7, alt1, alt2, alt3, alt4, alt5, alt6, alt7} = Astro.props;
+const {img1, img2, img3, img4, img5, img6, img7, img8, alt1, alt2, alt3, alt4, alt5, alt6, alt7, alt8} = Astro.props;
 
 ---
 <div class="slideshow-wrapper">
@@ -7,41 +7,46 @@ const {img1, img2, img3, img4, img5, img6, img7, alt1, alt2, alt3, alt4, alt5, a
   <div class="slideshow-container gallery2">
       <!-- Full-width images -->
       <div class="mySlidesGallery2 fade">
-        <div class="numbertext font-goldman">1 / 7</div>
+        <div class="numbertext font-goldman">1 / 8</div>
         <img src={img1} alt={alt1}>
         
       </div>
     
       <div class="mySlidesGallery2 fade">
-        <div class="numbertext font-goldman">2 / 7</div>
+        <div class="numbertext font-goldman">2 / 8</div>
         <img src={img2} alt={alt2}>
       </div>
     
       <div class="mySlidesGallery2 fade">
-        <div class="numbertext font-goldman">3 / 7</div>
+        <div class="numbertext font-goldman">3 / 8</div>
         <img src={img3} alt={alt3}>
       </div>
 
       <div class="mySlidesGallery2 fade">
-        <div class="numbertext font-goldman">4 / 7</div>
+        <div class="numbertext font-goldman">4 / 8</div>
         <img src={img4} alt={alt4}>
       </div>
     
 
       <div class="mySlidesGallery2 fade">
-        <div class="numbertext font-goldman">5 / 7</div>
+        <div class="numbertext font-goldman">5 / 8</div>
         <img src={img5} alt={alt5}>
       </div>
     
 
       <div class="mySlidesGallery2 fade">
-        <div class="numbertext font-goldman">6 / 7</div>
+        <div class="numbertext font-goldman">6 / 8</div>
         <img src={img6} alt={alt6}>
       </div>
 
       <div class="mySlidesGallery2 fade">
-        <div class="numbertext font-goldman">7 / 7</div>
+        <div class="numbertext font-goldman">7 / 8</div>
         <img src={img7} alt={alt7}>
+      </div>
+
+      <div class="mySlidesGallery2 fade">
+        <div class="numbertext font-goldman">8 / 8</div>
+        <img src={img8} alt={alt8}>
       </div>
     
     
@@ -59,6 +64,7 @@ const {img1, img2, img3, img4, img5, img6, img7, alt1, alt2, alt3, alt4, alt5, a
     <span class="dotGallery2" onclick="currentSlideGallery2(5)"></span>
     <span class="dotGallery2" onclick="currentSlideGallery2(6)"></span>
     <span class="dotGallery2" onclick="currentSlideGallery2(7)"></span>
+    <span class="dotGallery2" onclick="currentSlideGallery2(8)"></span>
   </div>
 </div>
 
